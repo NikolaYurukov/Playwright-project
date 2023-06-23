@@ -1,4 +1,11 @@
-import { test, expect, Page, Browser, ElementHandle } from "@playwright/test";
+import {
+  test,
+  expect,
+  Page,
+  Browser,
+  ElementHandle,
+  Locator,
+} from "@playwright/test";
 import { setupBrowser, teardownBrowser } from "./hooks";
 import { checkLogoExists, selectOptions } from "./common-function";
 import locators from "./locators-main";
@@ -46,11 +53,9 @@ test.describe("Test suite for e2e TB", () => {
   });
 
   test("[E2E] - Submit request form for tyres", async () => {
-    let makeAndModel: ElementHandle | null;
+    let makeAndModel: Locator | null;
     // Interact with the page
-    makeAndModel = await page.waitForSelector(
-      'div[class*="custTabFitmentItems"]'
-    );
+    makeAndModel = page.locator('div[class*="custTabFitmentItems"]');
     const isMakeModelVisible = await makeAndModel?.isVisible();
     expect(isMakeModelVisible).toBe(true);
     await makeAndModel?.click();
@@ -76,8 +81,8 @@ test.describe("Test suite for e2e TB", () => {
 
   test("[E2E] - Submit tire size request", async () => {
     // Interact with the page
-    let tireSize: ElementHandle | null;
-    tireSize = await page.waitForSelector(
+    let tireSize: Locator | null;
+    tireSize = page.locator(
       "#simple-tabpanel-0 .FitmentBlock_custTabFitment__2NyCr > div:nth-child(2)"
     );
     const isTireSizeVisible = await tireSize?.isVisible();
