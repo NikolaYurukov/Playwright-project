@@ -48,7 +48,9 @@ test.describe("Test suite for e2e TB", () => {
   test("[E2E] - Submit request form for tyres", async () => {
     let makeAndModel: ElementHandle | null;
     // Interact with the page
-    makeAndModel = await page.$('div[class*="custTabFitmentItems"]');
+    makeAndModel = await page.waitForSelector(
+      'div[class*="custTabFitmentItems"]'
+    );
     const isMakeModelVisible = await makeAndModel?.isVisible();
     expect(isMakeModelVisible).toBe(true);
     await makeAndModel?.click();
@@ -74,12 +76,13 @@ test.describe("Test suite for e2e TB", () => {
 
   test("[E2E] - Submit tire size request", async () => {
     // Interact with the page
-    let tireSize = page.locator(
+    let tireSize: ElementHandle | null;
+    tireSize = await page.waitForSelector(
       "#simple-tabpanel-0 .FitmentBlock_custTabFitment__2NyCr > div:nth-child(2)"
     );
-    const isTireSizeVisible = await tireSize.isVisible();
+    const isTireSizeVisible = await tireSize?.isVisible();
     expect(isTireSizeVisible).toBe(true);
-    await tireSize.click();
+    await tireSize?.click();
     const fitmentPanelData = 'div[id*="fitmentPanelData"]';
     await selectOptions(page, fitmentPanelData, ["105", "70", "14"]);
     //Insert zipcode
