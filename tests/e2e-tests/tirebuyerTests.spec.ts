@@ -74,13 +74,14 @@ test.describe("Test suite for e2e TB", () => {
 
   test("[E2E] - Submit tire size request", async () => {
     // Interact with the page
-    let tireSize = page.locator('div[id="fitmentPanelData"]');
+    let tireSize = page.locator(
+      "#simple-tabpanel-0 .FitmentBlock_custTabFitment__2NyCr > div:nth-child(2)"
+    );
     const isTireSizeVisible = await tireSize.isVisible();
     expect(isTireSizeVisible).toBe(true);
     await tireSize.click();
-    const fitmentPanelData = page.locator('div[id*="fitmentPanelData"]');
-    await fitmentPanelData.waitFor();
-    await selectOptions(page, `${fitmentPanelData}`, ["105", "70", "14"]);
+    const fitmentPanelData = 'div[id*="fitmentPanelData"]';
+    await selectOptions(page, fitmentPanelData, ["105", "70", "14"]);
     //Insert zipcode
     await page.fill('input[id="zipCode"]', "22333");
     //Search for results

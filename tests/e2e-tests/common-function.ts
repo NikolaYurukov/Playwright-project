@@ -1,5 +1,5 @@
 // common-function.ts
-import { Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import locators from "./locators-main";
 
 export const checkLogoExists = async (page: Page): Promise<boolean> => {
@@ -9,7 +9,7 @@ export const checkLogoExists = async (page: Page): Promise<boolean> => {
 
 export const selectOptions = async (
   page: Page,
-  selector: string,
+  selector: string | Locator,
   optionsToSelect: string[]
 ) => {
   // loop over the options you want to select
