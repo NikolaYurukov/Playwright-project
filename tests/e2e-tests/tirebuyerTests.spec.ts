@@ -23,6 +23,9 @@ test.describe("Test suite for e2e TB", () => {
     await page.waitForLoadState("networkidle");
     await expect(page).toHaveTitle(/TireBuyer/);
     await expect(page).toHaveURL(/.*tire/);
+    await page.addStyleTag({
+      content: "#attentive_creative { display: none }",
+    });
   });
 
   test.afterEach(async () => {
@@ -55,7 +58,9 @@ test.describe("Test suite for e2e TB", () => {
   test("[E2E] - Submit request form for tyres", async () => {
     let makeAndModel: Locator | null;
     // Interact with the page
-    makeAndModel = page.locator('div[class*="custTabFitmentItems"]');
+    makeAndModel = page.locator(
+      "div.FitmentBlock_custTabFitment__2NyCr > div:nth-child(1)"
+    );
     const isMakeModelVisible = await makeAndModel?.isVisible();
     expect(isMakeModelVisible).toBe(true);
     await makeAndModel?.click();
