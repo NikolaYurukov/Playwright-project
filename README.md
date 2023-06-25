@@ -217,4 +217,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[playwright]: https://seeklogo.com/images/P/playwright-logo-22FA8B9E63-seeklogo.com.png
+[playwright]: https://img.shields.io/badge/Playwright-you_like
+[playwright-url]: https://playwright.dev/
