@@ -1,11 +1,4 @@
-import {
-  test,
-  expect,
-  Page,
-  Browser,
-  ElementHandle,
-  Locator,
-} from "@playwright/test";
+import { test, expect, Page, Browser, Locator } from "@playwright/test";
 import { setupBrowser, teardownBrowser } from "./hooks";
 import { checkLogoExists, selectOptions } from "./common-function";
 import locators from "./locators-main";
@@ -15,6 +8,7 @@ test.describe("Test suite for e2e TB", () => {
   let browser: Browser;
   let page: Page;
 
+  // Load browser and setup state before each test.
   test.beforeEach(async () => {
     const result = await setupBrowser();
     browser = result.browser;
@@ -28,6 +22,7 @@ test.describe("Test suite for e2e TB", () => {
     });
   });
 
+  // Shut down the browser after each test, so that each test can be standalone.
   test.afterEach(async () => {
     await teardownBrowser(browser);
   });
@@ -45,25 +40,15 @@ test.describe("Test suite for e2e TB", () => {
   });
 
   test("[COMPONENT] - Checks the homepage hero Banner and finance sections", async () => {
-    const heroBanner = await page.$('div[class="homeHero"]');
-    const financeEasySection = await page.$(
-      'div[class*="Fitment_financeHubEasySection"]'
-    );
-    const isFinanceEasySectionVisible = await financeEasySection?.isVisible();
-    const isHeroBannerVisible = await heroBanner?.isVisible();
-    expect(isFinanceEasySectionVisible).toBe(true);
-    expect(isHeroBannerVisible).toBe(true);
+    await expect(page.locator('div[class="homeHero"]')).toBeVisible();
+    await expect(
+      page.locator('div[class*="Fitment_financeEasySection"]')
+    ).toBeVisible();
   });
 
   test("[E2E] - Submit request form for tyres", async () => {
-    let makeAndModel: Locator | null;
     // Interact with the page
-    makeAndModel = page.locator(
-      "div.FitmentBlock_custTabFitment__2NyCr > div:nth-child(1)"
-    );
-    const isMakeModelVisible = await makeAndModel?.isVisible();
-    expect(isMakeModelVisible).toBe(true);
-    await makeAndModel?.click();
+    await page.getByText("Vehicle make & model").click();
     //function for selecting the options
     await selectOptions(page, 'div[id="fitmentPanelData"]', [
       "2023",
@@ -86,13 +71,7 @@ test.describe("Test suite for e2e TB", () => {
 
   test("[E2E] - Submit tire size request", async () => {
     // Interact with the page
-    let tireSize: Locator | null;
-    tireSize = page.locator(
-      "#simple-tabpanel-0 .FitmentBlock_custTabFitment__2NyCr > div:nth-child(2)"
-    );
-    const isTireSizeVisible = await tireSize?.isVisible();
-    expect(isTireSizeVisible).toBe(true);
-    await tireSize?.click();
+    await page.getByText("Tire size", { exact: true }).click();
     const fitmentPanelData = 'div[id*="fitmentPanelData"]';
     await selectOptions(page, fitmentPanelData, ["105", "70", "14"]);
     //Insert zipcode
