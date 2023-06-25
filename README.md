@@ -34,7 +34,7 @@
     <title>TireBuyer</title>
 </head>
     <header>
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftirebuyer%2F&psig=AOvVaw3iEkIKilUHKDGe7_MZwEnp&ust=1687812396975000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCKC8gKWl3_8CFQAAAAAdAAAAABAe" alt="TireBuyer" />
+        <img src="https://www.tirebuyer.com/_ui/tirebuyer-logo-header.png" alt="TireBuyer" />
     </header>
 
   <h3 align="center">TireBuyer automation framework</h3>
