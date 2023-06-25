@@ -30,9 +30,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tirebuyer.com%2F&psig=AOvVaw0KfaAwe6kRucOkc6djvTzA&ust=1687811966574000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJivmtej3_8CFQAAAAAdAAAAABAJ">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tirebuyer.com%2F&psig=AOvVaw0KfaAwe6kRucOkc6djvTzA&ust=1687811966574000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJivmtej3_8CFQAAAAAdAAAAABAJ" alt="Logo" width="80" height="80">
-  </a>
+<!DOCTYPE html>
+    <title>Logo Example</title>
+</head>
+    <header>
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tirebuyer.com%2F&psig=AOvVaw0KfaAwe6kRucOkc6djvTzA&ust=1687811966574000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJivmtej3_8CFQAAAAAdAAAAABAJ" alt="Logo Description" />
+    </header>
 
   <h3 align="center">TireBuyer automation framework</h3>
 
