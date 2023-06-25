@@ -33,7 +33,6 @@
 <br />
 <div align="center">
 <!DOCTYPE html>
-    <title>TireBuyer</title>
 </head>
     <header>
         <img src="https://mma.prnewswire.com/media/1598974/Tirebuyer_Logo.jpg?p=facebook" alt="TireBuyer" />
