@@ -94,6 +94,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [![Playwright][Playwright.com]][Playwright-url]
+* [![Typescript][Typescript.com]][Typescript-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,3 +241,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [JQuery-url]: https://jquery.com 
 [Playwright.com]: https://img.shields.io/badge/Playwright-grey?style=for-the-badge&logo=playwright&logoColor=green
 [Playwright-url]: https://playwright.dev
+[Typescript.com]: https://img.shields.io/badge/typescript-white?style=for-the-badge&logo=typescript&logoColor=blue
+[Typescript-url]: https://playwright.dev
