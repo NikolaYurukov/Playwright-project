@@ -1,6 +1,10 @@
 {
   "name": "playwright-project",
-  "version": "1.0.0",
+  "version": "1.35.1",
+  "repository": {
+    "type": "git",
+    "url": "https://https://github.com/NikolaYurukov/Playwright-project"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -9,5 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.35.1"
+  },
+  "dependencies": {
+    "node": "^20.3.1",
+    "playwright": "^1.35.1"
   }
 }
